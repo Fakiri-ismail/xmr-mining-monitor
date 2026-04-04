@@ -6,9 +6,10 @@ Fetches live worker data and visualizes hashrate trends with matplotlib.
 ## Features
 
 - Live balance and hashrate from Nanopool API
-- Chart — all workers × all time windows
 - Chart — current hashrate per worker
-- Chart — account-level average hashrate over time
+- Chart — 24h average hashrate per worker
+- Chart — 24h average share rate per worker
+- Chart — 1 week average share rate per worker
 - Saves dashboard as PNG
 
 ## Setup
