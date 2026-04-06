@@ -44,15 +44,12 @@ def calculate_avg_share_rate(share_rate: list) -> dict:
     """Calculate average share rate for different time windows."""
     if share_rate:
         return {
-            "h1": int(share_rate[0]["sum"]),
-            "h6": sum(int(s["sum"]) for s in share_rate[0:6]) / 6,
-            "h12": sum(int(s["sum"]) for s in share_rate[0:12]) / 12,
-            "h24": sum(int(s["sum"]) for s in share_rate[0:24]) / 24,
-            "w1": sum(int(s["sum"]) for s in share_rate) / len(share_rate)
+            "now": int(share_rate[0]["sum"]),
+            "h1": int(share_rate[1]["sum"]),
+            "h6": sum(int(s["sum"]) for s in share_rate[1:7]) / 6,
+            "h12": sum(int(s["sum"]) for s in share_rate[1:13]) / 12,
+            "h24": sum(int(s["sum"]) for s in share_rate[1:25]) / 24,
+            "w1": sum(int(s["sum"]) for s in share_rate[1:]) / len(share_rate[1:])
         }
 
     return {"h1": 0, "h6": 0, "h12": 0, "h24": 0, "w1": 0}
-
-if __name__ == "__main__":
-    data = get_user_data()
-    print(get_workers_shares(data))
